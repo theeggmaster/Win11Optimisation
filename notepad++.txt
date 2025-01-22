@@ -1,0 +1,7 @@
+uninstall Notepad (causes Win 11 to go back to old Notepad)
+
+Run the following in elevated cmd
+reg add "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\notepad.exe" /v "Debugger" /t REG_SZ /d "\"%ProgramFiles%\Notepad++\notepad++.exe\" -notepadStyleCmdline -z" /f
+reg add "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\notepad.exe\0" /v "FilterFullPath" /t REG_SZ /d "%ProgramFiles%\Notepad++\notepad++.exe" /f
+reg add "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\notepad.exe\1" /v "FilterFullPath" /t REG_SZ /d "%ProgramFiles%\Notepad++\notepad++.exe" /f
+reg add "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\notepad.exe\2" /v "FilterFullPath" /t REG_SZ /d "%ProgramFiles%\Notepad++\notepad++.exe" /f
